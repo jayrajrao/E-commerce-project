@@ -1,0 +1,48 @@
+<%- include('header.ejs') %>
+
+<section class="banner">
+  <div class="banner-box">
+    <div class="intro-text">
+      <div class="intro-text-box">
+        <h1>The art of writing about art</h1>
+        <p>
+          In terms of text, consider using a subtitle under the main heading of
+          your page. It should be short and punchy and sum you up as an artist
+          in a few words (Daren Redman – Contemporary textile artist).
+        </p>
+      </div>
+      nodemon
+    </div>
+    <img src="/images/istockphoto-1183183783-612x612.jpg" alt="banner" />
+  </div>
+</section>
+<section class="featured-blog mtb-40">
+  <div class="container">
+    <div class="row">
+
+         
+        <% d.forEach((item)=>{ %>
+      <div class="col-md-4">
+        <div class="blog-box">
+          <img src="<%= item.image.url %> " width="300" height="300" alt="blog1" />
+
+          <h3><%= item.title %></h3>
+          <p></p>
+          <p><%= item.description.slice(0,90) %></p>
+          <a href="/blogdetail/<%= item._id %>" class="btn btn-danger">Read more...</a>
+        </div>
+      </div>
+      <% }) %>
+      
+
+    
+
+
+  </div>
+
+
+
+
+</section>
+
+<%- include('footer.ejs') %>
