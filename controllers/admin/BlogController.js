@@ -106,7 +106,7 @@ class BlogController {
       await cloudinary.uploader.destroy(imageid)
 
       const result = await BlogModel.findByIdAndDelete(req.params.id)
-      res.render("/admin/blogdisplay")
+      res.redirect("/admin/blogdisplay")
     } catch (err) {
       console.log(err);
     }

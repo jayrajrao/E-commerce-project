@@ -1,6 +1,6 @@
 
-//const categorymodel = require("../Model/category")
-const AdminModel = require("../Model/admin");
+const categorymodel = require("../Model/category")
+//const AdminModel = require("../Model/admin");
 const AboutModel = require("../Model/about");
 const BlogModel = require("../Model/blog")
 
@@ -74,11 +74,11 @@ class FrontController {
 
   static blogdetail= async(req,res)=>{
     try {
-     // const category = await categorymodel.find()
+      const category = await categorymodel.find()
       const recentblog = await BlogModel.find()
       const result = await BlogModel.findById(req.params.id)
       //console.log(result)
-      res.render("blogdetail", {r:result, recentblog:recentblog, })
+      res.render("blogdetail", {r:result, recentblog:recentblog, cat:category})
     } catch (err) {
       console.log(err)
     }
